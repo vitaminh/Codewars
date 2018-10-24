@@ -1,0 +1,44 @@
+class Shape {
+  constructor() {
+    this.area;
+  }
+}
+
+Shape.prototype.valueOf = function() {
+  return this.area;
+}
+
+class Square extends Shape {
+  constructor(side) {
+    super();
+    this.area = side * side;
+  }
+}
+
+class Rectangle extends Shape {
+  constructor(width, height) {
+    super();
+    this.area = width * height;
+  }
+}
+
+class Triangle extends Shape {
+  constructor(base, height) {
+    super();
+    this.area = base * height * 0.5;
+  }
+}
+
+class Circle extends Shape {
+  constructor(radius) {
+    super();
+    this.area = radius * radius * Math.PI;
+  }
+}
+
+class CustomShape extends Shape {
+  constructor(x) {
+    super();
+    this.area = x;
+  }
+}
