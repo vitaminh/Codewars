@@ -1,0 +1,15 @@
+function longestSlideDown (pyramid) {
+    let sums = pyramid[pyramid.length - 1];
+    for (let i = pyramid.length - 2; i >= 0; i--) {
+      let tempSums = [];
+      let currentRow = pyramid[i];
+      for (let j = 0; j < currentRow.length; j++) {
+        const leftSum = currentRow[j] + sums[j];
+        const rightSum = currentRow[j] + sums[j + 1];
+        const maxSum = (leftSum > rightSum) ? leftSum : rightSum;
+        tempSums.push(maxSum);
+      }
+      sums = tempSums;
+    }
+    return sums[0];
+}
